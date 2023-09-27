@@ -11,3 +11,8 @@
     border: 1px solid black;
     font-weight: bold;
 }
+
+.td {
+    display: table-cell;
+    border: 1px solid black;
+}

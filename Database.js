@@ -11,7 +11,43 @@ import {
 import { app } from "./firebaseSetup.js";
 
 const db = getDatabase(app);
+const dbRef = ref(db);
 
 function DisplayUserData() {
+    const userTable = document.querySelector("#databaseResults");
 
+    get(child(dbRef, `users/`)).then((snapshot) => {
+        for (const user in snapshot.val()) {
+            const userRow = document.createElement("div");
+            userRow.classList.add("tr");
+            const userID = document.createElement("div");
+            userID.classList.add("td");
+            const userName = document.createElement("div");
+            userName.classList.add("td");
+            const userLocation = document.createElement("div");
+            userLocation.classList.add("td");
+            const userDescription = document.createElement("div");
+            userDescription.classList.add("td");
+            const userFood = document.createElement("div");
+            userFood.classList.add("td");
+
+            userID.innerText = user;
+            userName.innerText = snapshot.val()[user].name;
+            userLocation.innerText = snapshot.val()[user].location;
+            userDescription.innerText = snapshot.val()[user].description;
+            userFood.innerText = snapshot.val()[user].food;
+
+            userRow.appendChild(userID);
+            userRow.appendChild(userName);
+            userRow.appendChild(userLocation);
+            userRow.appendChild(userDescription);
+            userRow.appendChild(userFood);
+
+            userTable.appendChild(userRow);
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
 }
+
+DisplayUserData();
