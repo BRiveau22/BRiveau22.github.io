@@ -18,12 +18,12 @@ const signOutButton = document.querySelector("#signOutButton");
 
 content.style.display = "none";
 
-export async function userSignUp() {
+const userSignUp = async () => {
     const signUpEmail = userEmail.value;
     const signUpPassword = userPassword.value;
 
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-        .then(userCredential => {
+        .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
             alert("Your account has been created!");
@@ -32,29 +32,26 @@ export async function userSignUp() {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode + errorMessage);
-        });
+        })
 }
 
-export async function userSignIn() {
+const userSignIn = async () => {
     const signInEmail = userEmail.value;
     const signInPassword = userPassword.value;
 
-    console.log(signInEmail, signInPassword);
-
     signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-        .then(userCredential => {
+        .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user);
             alert("You have signed in successfully!");
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode + errorMessage);
-        });
+        })
 }
 
-export async function checkAuthState() {
+const checkAuthState = async () => {
     onAuthStateChanged(auth, user => {
         if (user) {
             content.style.display = "block";
@@ -63,10 +60,10 @@ export async function checkAuthState() {
             content.style.display = "none";
             authForm.style.display = "block";
         }
-    });
+    })
 }
 
-export async function userSignOut() {
+const userSignOut = async () => {
     await signOut(auth);
 }
 
