@@ -7,7 +7,9 @@
     <title>Bengram</title>
     <link rel="icon" href="Media/Logo/favicon.png">
     <link rel="stylesheet" href="styles.css">
-
+    <script type="module" src="./firebaseSetup.js"></script>
+    <script type="module" src="./Authentication.js"></script>
+    <script type="module" src="./Database.js"></script>
 </head>
 
 <body>
@@ -25,5 +27,31 @@
         <button id="signOutButton">Sign Out</button>
     </div>
 
-    <script type="module" src="firebaseSetup.js"></script>
+    <div class="table" id="databaseResults">
+        <div class="tr">
+            <div class="th">
+                ID
+            </div>
+            <div class="th">
+                Email
+            </div>
+            <div class="th">
+                Password
+            </div>
+            <div class="th">
+                Name
+            </div>
+            <div class="th">
+                Location
+            </div>
+            <div class="th">
+                Description
+            </div>
+            <div class="th">
+                Favorite Food
+            </div>
+        </div>
+    </div>
+
+
 </body>
