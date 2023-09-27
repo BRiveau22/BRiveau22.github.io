@@ -69,6 +69,6 @@ const userSignOut = async () => {
 
 checkAuthState();
 
-signUpButton.addEventListener("click", userSignUp());
-signInButton.addEventListener("click", userSignIn());
-signOutButton.addEventListener("click", userSignOut());
+signUpButton.addEventListener("click", userSignUp);
+signInButton.addEventListener("click", userSignIn);
+signOutButton.addEventListener("click", userSignOut);
