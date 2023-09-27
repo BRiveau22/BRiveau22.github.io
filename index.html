@@ -3,11 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bengram</title>
     <link rel="icon" href="Media/Logo/favicon.png">
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
-    <p>Hello World!</p>
+    <div id="authForm">
+        <h2>Sign Up or Sign In</h2>
+        <input type="email" placeholder="email" id="userEmail">
+        <input type="password" placeholder="password" id="userPassword">
+        <br>
+        <button id="signUpButton">Sign Up</button>
+        <button id="signInButton">Sign In</button>
+    </div>
+
+    <div id="content">
+        <p>You have signed In!</p>
+        <button id="signOutButton">Sign Out</button>
+    </div>
+
+    <script type="module" src="firebaseSetup.js"></script>
 </body>
