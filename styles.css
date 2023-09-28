@@ -1,4 +1,23 @@
+body {
+    background-color: #444444;
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+#authForm {
+    text-align: center;
+}
+
+#content {
+    text-align: center;
+}
+
+#databaseResults {
+    text-align: center;
+}
+
 .table {
+    width: 100%;
     display: table;
 }
 
@@ -8,11 +27,41 @@
 
 .th {
     display: table-cell;
-    border: 1px solid black;
     font-weight: bold;
+    border: 1px solid white;
 }
 
 .td {
+    padding-left: 10px;
+    padding-right: 10px;
     display: table-cell;
-    border: 1px solid black;
+    border: 1px solid white;
+}
+
+#banner {
+    width: 100%;
+    background-image: url('./Media/Logo/png/logo-no-background.png');
+    background-repeat: no-repeat;
+    height: 405px;
+    background-position: center
+}
+
+#embeddedApp {
+    text-align: center;
+}
+
+button {
+    background-color: #00D1CD;
+    color: white;
+    font-family: 'Merriweather', serif;
+    border: none;
+    border-radius: 5px;
+}
+
+iframe {
+    border: none;
+    border-radius: 50px;
+    background-color: #00D1CD;
+    padding-top: 50px;
+    height: 750px;
 }
