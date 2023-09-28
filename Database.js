@@ -13,7 +13,7 @@ import { app } from "./firebaseSetup.js";
 const db = getDatabase(app);
 const dbRef = ref(db);
 
-function DisplayUserData() {
+function displayData() {
     const userTable = document.querySelector("#databaseResults");
 
     get(child(dbRef, `users/`)).then((snapshot) => {
@@ -60,4 +60,43 @@ function DisplayUserData() {
     });
 }
 
-DisplayUserData();
+export function displayUserData(displayUser) {
+    const content = document.querySelector("#content");
+
+    get(child(dbRef, `users/`)).then((snapshot) => {
+        let index = -1;
+
+        for (const user in snapshot.val()) {
+            if (user == displayUser.uid) {
+                index = user;
+            }
+        }
+
+        if (index == -1) {
+            return;
+        }
+
+        const userName = document.querySelector("#userName");
+        const userImg = document.querySelector("#userImg");
+        const userLocation = document.querySelector("#userLocation");
+        const userDescription = document.querySelector("#userDescription");
+        const userFood = document.querySelector("#userFood");
+
+        userName.innerText = 'Name: ' + snapshot.val()[index].name;
+        if (snapshot.val()[index].image != null) {
+            userImg.style.display = 'block';
+            userImg.src = snapshot.val()[index].image;
+            content.appendChild(userImg);
+        }
+        else {
+            userImg.style.display = 'none';
+        }
+        userLocation.innerText = 'Location: ' + snapshot.val()[index].location;
+        userDescription.innerText = 'Description: ' + snapshot.val()[index].description;
+        userFood.innerText = 'Favorite Food: ' + snapshot.val()[index].food;
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+displayData();
