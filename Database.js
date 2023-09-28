@@ -30,6 +30,8 @@ function DisplayUserData() {
             userDescription.classList.add("td");
             const userFood = document.createElement("div");
             userFood.classList.add("td");
+            const userImgUrl = document.createElement("div");
+            userImgUrl.classList.add("td");
 
             userID.innerText = user;
             userName.innerText = snapshot.val()[user].name;
@@ -37,8 +39,16 @@ function DisplayUserData() {
             userDescription.innerText = snapshot.val()[user].description;
             userFood.innerText = snapshot.val()[user].food;
 
+            if (snapshot.val()[user].image == null) {
+                userImgUrl.innerText = "No Image";
+            }
+            else {
+                userImgUrl.innerText = snapshot.val()[user].image;
+            }
+
             userRow.appendChild(userID);
             userRow.appendChild(userName);
+            userRow.appendChild(userImgUrl);
             userRow.appendChild(userLocation);
             userRow.appendChild(userDescription);
             userRow.appendChild(userFood);
