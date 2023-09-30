@@ -25,8 +25,6 @@ const userSignUp = async () => {
 
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
         .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
             alert("Your account has been created!");
         })
         .catch((error) => {
@@ -42,7 +40,6 @@ const userSignIn = async () => {
 
     signInWithEmailAndPassword(auth, signInEmail, signInPassword)
         .then((userCredential) => {
-            const user = userCredential.user;
             alert("You have signed in successfully!");
         })
         .catch((error) => {
