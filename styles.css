@@ -4,21 +4,29 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+hr {
+    border: 2px solid #00D1CD;
+}
+
 #authForm {
     text-align: center;
+    padding: 50px;
 }
 
 #content {
     text-align: center;
+    padding: 50px;
 }
 
-#databaseResults {
+#userData {
     text-align: center;
+    padding: 50px;
 }
 
 .table {
     width: 100%;
     display: table;
+    text-align: center;
 }
 
 .tr {
