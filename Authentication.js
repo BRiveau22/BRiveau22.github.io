@@ -6,7 +6,7 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 import { app } from "./firebaseSetup.js";
-import { displayUserData } from "./Database.js";
+import { displayProfileData } from "./Database.js";
 
 const auth = getAuth(app);
 const userEmail = document.querySelector("#userEmail");
@@ -58,7 +58,7 @@ const checkAuthState = async () => {
             content.style.display = "block";
             authForm.style.display = "none";
 
-            displayUserData(user);
+            displayProfileData(user);
         } else {
             content.style.display = "none";
             authForm.style.display = "block";

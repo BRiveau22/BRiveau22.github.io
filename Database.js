@@ -60,7 +60,7 @@ function displayData() {
     });
 }
 
-export function displayUserData(displayUser) {
+export function displayProfileData(displayUser) {
     const content = document.querySelector("#content");
 
     get(child(dbRef, `users/`)).then((snapshot) => {
