@@ -18,6 +18,12 @@ hr {
     padding: 50px;
 }
 
+#userImg {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
 #userData {
     text-align: center;
     padding: 50px;

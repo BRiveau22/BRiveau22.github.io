@@ -58,7 +58,7 @@ function displayData() {
 }
 
 export function displayProfileData(displayUser) {
-    const content = document.querySelector("#content");
+    const content = document.querySelector("#profileData");
 
     get(child(dbRef, `users/`)).then((snapshot) => {
         let index = -1;
